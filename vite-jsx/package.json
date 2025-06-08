@@ -1,0 +1,23 @@
+{
+    "name": "vite-jsx",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build --mode client && vite build",
+        "start": "node dist/index.js"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.14.4",
+        "@hono/vite-build": "^1.6.2",
+        "@hono/vite-dev-server": "^0.19.1",
+        "hono": "^4.7.11"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.17",
+        "sass-embedded": "^1.89.1",
+        "typescript": "^5.8.3",
+        "vite": "^6.3.5",
+        "vite-tsconfig-paths": "^5.1.4"
+    }
+}
