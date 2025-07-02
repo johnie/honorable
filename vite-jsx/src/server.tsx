@@ -1,12 +1,13 @@
-import { serveStatic } from "@hono/node-server/serve-static";
-import { Hono } from "hono";
+import { serveStatic } from '@hono/node-server/serve-static';
+import { Hono } from 'hono';
 
 const app = new Hono();
 
-app.use("/static/*", serveStatic({ root: "./dist" }));
-app.use("/assets/*", serveStatic({ root: "./dist" }));
+app.use('/static/*', serveStatic({ root: './dist' }));
 
-const routes = app.get("/api/clock", (c) => {
+app.use('/assets/*', serveStatic({ root: './dist' }));
+
+const routes = app.get('/api/clock', (c) => {
   return c.json({
     time: new Date().toLocaleTimeString(),
   });
@@ -14,7 +15,7 @@ const routes = app.get("/api/clock", (c) => {
 
 export type AppType = typeof routes;
 
-app.get("/", (c) => {
+app.get('/', (c) => {
   return c.html(
     <html lang="en">
       <head>
